@@ -1,131 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .background-video {
   width: 100vw;
   height: 100vh;
-  object-fit:cover;
+  object-fit: cover;
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
   z-index: -1;
   opacity: 0.8;
 }
 
-body{
-  background-color: black;
-}
-
-.card{
-  float: left;
-  display: flex;
-  flex-direction: column;
-  /* width: 250px;
-  height: 300px; */
-  background: linear-gradient(rgba(62, 62, 62, 0.464),rgba(0, 0, 0, 0.2),rgba(79, 50, 50, 0.2));
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 30px;
-  border-radius: 20px;
-  justify-content: center;
-   margin-left: 40%;
-   margin-right: 50%;
-   margin-top: 10%;
-
-}
-
-@media(max-width: 768px) {
-  .card{
-    margin-left: 20%;
-  }
-}
-
-.search{
-  display: flex;
-  /* margin-left: 13px; */
-  justify-content: center;
-}
-
-.search-bar{
-  width: 160px;
-  height: 30px;
-  font-family: cursive;
-  background: transparent;
-  border:1px solid rgb(100, 161, 142);
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  border-right: none;
+.coordinates {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   color: #ffffff;
-}
-.search-bar::placeholder{
-  color: rgb(255, 255, 255);
-  opacity: 0.3;
-}
-.search-bar:focus{
-  outline: none;
-}
-.btn{
-  width: 100px;
-  background: rgb(100, 161, 142);
-  border: 2px solid rgb(100, 161, 142);
-  color: #fff;
-  font-family: cursive;
-  font-size: 15px;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-  transition: 0.28s ease;
-  cursor: pointer;
-}
-.btn:focus{
-  outline: none;
-}
-.btn:hover{
-  background-color:rgba(100, 161, 142, 0.137);
-}
-.weather{
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-  color: #f3f4f5;
-  margin-bottom: 50px;
-}
-.temp{
-  font-size: 25px;
-  justify-content: center;
-}
-.city{
-  font-size: 25px;
-  margin-top: -30px;
-}
-
-.details{
-  margin-top: -50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  color: #f1f4f6;
-  size: 20px;
-}
-
-.col{
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.humidity,.windspeed{
-  margin-bottom: -20px;
-  margin-top: 0px;
-  margin-left: 15px;
-}
-.h,.w{
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px 12px;
+  border-radius: 8px;
   font-size: 16px;
 }
-.w{
-  margin-left: -20px;
-}
-.windspeed{
-  margin-left: -10px;
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 0;
 }
 
+.search-bar {
+  width: 200px;
+  height: 35px;
+  font-size: 16px;
+  padding: 5px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #64a18e;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+  width: 100px;
+  background: #64a18e;
+  border: none;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgba(100, 161, 142, 0.5);
+}
+
+.card {
+  margin: 50px auto 30px;
+  padding: 30px 40px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+}
+
+.temp {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20px;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.city {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Weather Details Section */
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col img {
+  height: 60px;
+  width: 60px;
+}
+
+.humidity,
+.windspeed {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.h,
+.w {
+  font-size: 16px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 768px) {
+  .details {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .coordinates {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .search {
+    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn,
+  .search-bar {
+    width: 90%;
+    margin: 5px 0;
+  }
+
+  .card {
+    width: 80%;
+    padding: 20px;
+  }
+}
