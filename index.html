@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      Weather App
-    </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    
-    <video class="background-video" autoplay loop muted >
-      <source id="myvideo" src="clouds.mp4" type="video/mp4">
+    <video class="background-video" autoplay loop muted>
+      <source id="myvideo" src="clouds.mp4" type="video/mp4" />
     </video>
-      <div class="card" id="card">
-        <div class="search">
-          <input type="text" class="search-bar" placeholder="Enter City" value="">
-          <button class="btn">Search</button>
-        </div>
-        <div class="weather">
-          <p class="temp">22°c</p>
-          <p class="city">City<p>
-        </div>
-        <div class="details">
-          <div class="col">
-            <img src="humidity.png" alt="Humidity" style="height: 60px; width: 60px;">
-            <div>
-              <p class="humidity">50%</p>
-              <p class="h">Humidity</p>
-            </div>
-          </div>
 
-          <div class="col">
-            <img src="wind speed.png" alt="Wind Speed" style="height: 60px; width: 60px;">
-            <div>
-              <p class="windspeed">50 Km/hr</p>
-              <p class="w">Wind Speed</p>
-            </div>
-          </div>
+    <!-- Coordinates at top-right -->
+    <div class="coordinates" id="coordinates">
+      Lat: -- | Lon: --
+    </div>
+
+    <!-- Search bar at top-center -->
+    <div class="search">
+      <input type="text" class="search-bar" placeholder="Enter City" value="" />
+      <button class="btn">Search</button>
+    </div>
+
+    <!-- Weather Main Display Card -->
+    <div class="card" id="card">
+      <p class="city">City</p>
+      <p class="temp">--°c</p>
+      <p class="description">Description</p>
+    </div>
+
+    <!-- Weather Details below -->
+    <div class="details">
+      <div class="col">
+        <img src="humidity.png" alt="Humidity" />
+        <div>
+          <p class="humidity">--%</p>
+          <p class="h">Humidity</p>
         </div>
       </div>
-      <script src="script.js"></script>
+
+      <div class="col">
+        <img src="wind speed.png" alt="Wind Speed" />
+        <div>
+          <p class="windspeed">-- km/hr</p>
+          <p class="w">Wind Speed</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
